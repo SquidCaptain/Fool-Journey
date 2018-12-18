@@ -1,10 +1,11 @@
-const Discord = require(discord.js);
+const Discord = require('discord.js');
 const bot = new Discord.Client();
-const token = 'NTI0Mzg5MjUwODU5MjcwMTQ3.DvnXdQ.pnXKZwI7MP2qOXMOpP8RGqKsDeU';
+const token = require('./auth.json').token;
 
+/*
 bot.on('ready', () => {
   console.log(`Logged in as ${bot.user.tag}!`);
-});
+}); */
 
 const commands = ['ping', 'pong'];
 
@@ -21,4 +22,5 @@ bot.on('message', msg => {
   }
 });
 
-bot.login('token');
+
+bot.login(token);
